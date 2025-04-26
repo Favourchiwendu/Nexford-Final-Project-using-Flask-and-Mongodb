@@ -13,7 +13,7 @@ Survey APP/
 
 │   └── form.html          # Frontend HTML form
 
-├── user_class.py          # Python class for User data processing
+├── user.py          # Python class for User data processing
 
 ├── export_data.csv        # Exported user data (generated)
 
