@@ -15,9 +15,9 @@ Survey APP/
 
 ├── user.py          # Python class for User data processing
 
-├── export_data.csv        # Exported user data (generated)
+├── survey_user.csv        # Exported user data (generated)
 
-├── analysis.ipynb         # Jupyter notebook for data visualization
+├── data_visualization.ipynb         # Jupyter notebook for data visualization
 
 ├── requirements.txt       # Python dependencies
 
