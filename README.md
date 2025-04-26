@@ -57,17 +57,17 @@ Expense details (Utilities, Entertainment, School Fees, Shopping, Healthcare).
 
 Expense entries use checkboxes and input fields for amount entry.
 
-Data Storage with MongoDB
+## Data Storage with MongoDB
 
 The submitted data is stored in a MongoDB database named survey_db under a collection user_data.
 
-Data Processing with Python
+## Data Processing with Python
 
 A User class was created in Python.
 
 The data collected from MongoDB was looped through and saved into a CSV file.
 
-Data Analysis and Visualization
+## Data Analysis and Visualization
 
 A Jupyter Notebook (analysis.ipynb) was created.
 
@@ -79,7 +79,11 @@ Top Ages with the Highest Income (Bar Chart)
 
 Gender Distribution across Spending Categories (Grouped Bar Chart)
 
-Export
+## Export
 
 All charts are prepared for export to be used in a PowerPoint presentation for client reporting.
 
+
+## Ensure that the form.html file is inside a template folder before executing it
+
+## This app was not succesfully executed on AWS because of the one dollar request from my credit card before i can access the user ID and deploy the app
