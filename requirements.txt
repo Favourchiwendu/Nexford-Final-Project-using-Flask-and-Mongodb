@@ -50,7 +50,6 @@ pycparser==2.22
 Pygments==2.19.1
 pymongo==4.12.0
 pyparsing==3.2.3
-pypiwin32==223
 python-dateutil==2.9.0.post0
 pythonnet==3.0.5
 pytz==2025.2
