@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Income and Expense Survey</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #343a40;
+      font-weight: bold;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .expense-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .expense-row .form-check-label {
+      flex: 1;
+      margin-left: 8px;
+      font-weight: 500;
+    }
+
+    .expense-row input[type="number"] {
+      flex: 2;
+      margin-left: 15px;
+    }
+
+    .form-control {
+      border-radius: 6px;
+    }
+
+    button {
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Income and Expense Survey</h2>
+  <form action="/submit" method="POST">
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" name="age" required/>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select class="form-control" id="gender" name="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="income">Total Income (USD):</label>
+      <input type="number" class="form-control" id="income" name="income" required/>
+    </div>
+
+    <div class="form-group">
+      <label>Expense Categories:</label>
+
+      <div class="expense-row">
+        <input type="checkbox" class="form-check-input" id="utilities" name="categories" value="utilities"/>
+        <label class="form-check-label" for="utilities">Utilities</label>
+        <input type="number" class="form-control" id="utilities_amount" name="utilities" placeholder="Amount" disabled/>
+      </div>
+
+      <div class="expense-row">
+        <input type="checkbox" class="form-check-input" id="entertainment" name="categories" value="entertainment"/>
+        <label class="form-check-label" for="entertainment">Entertainment</label>
+        <input type="number" class="form-control" id="entertainment_amount" name="entertainment" placeholder="Amount" disabled/>
+      </div>
+
+      <div class="expense-row">
+        <input type="checkbox" class="form-check-input" id="school_fees" name="categories" value="school_fees"/>
+        <label class="form-check-label" for="school_fees">School Fees</label>
+        <input type="number" class="form-control" id="school_fees_amount" name="school_fees" placeholder="Amount" disabled/>
+      </div>
+
+      <div class="expense-row">
+        <input type="checkbox" class="form-check-input" id="shopping" name="categories" value="shopping"/>
+        <label class="form-check-label" for="shopping">Shopping</label>
+        <input type="number" class="form-control" id="shopping_amount" name="shopping" placeholder="Amount" disabled/>
+      </div>
+
+      <div class="expense-row">
+        <input type="checkbox" class="form-check-input" id="healthcare" name="categories" value="healthcare"/>
+        <label class="form-check-label" for="healthcare">Healthcare</label>
+        <input type="number" class="form-control" id="healthcare_amount" name="healthcare" placeholder="Amount" disabled/>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block mt-4">Submit the survey</button>
+  </form>
+</div>
+
+<!-- Enable input fields when checkbox is selected -->
+<script>
+  const categories = document.querySelectorAll('input[name="categories"]');
+
+  categories.forEach(category => {
+    const amountInput = document.getElementById(`${category.value}_amount`);
+    category.addEventListener('change', () => {
+      amountInput.disabled = !category.checked;
+      if (!category.checked) amountInput.value = "";
+    });
+  });
+</script>
+
+</body>
+</html>
